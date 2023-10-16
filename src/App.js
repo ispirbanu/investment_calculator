@@ -1,40 +1,46 @@
+import { useState } from "react";
 import Header from "./components/Header/Header";
 import ResulsTable from "./components/ResultsTable/ResultsTable";
 import UserInput from "./components/UserInput/UserInput";
 
 function App() {
+  const [userInput, setUserInput] = useState(null);
+
   const calculateHandler = (userInput) => {
-    // Should be triggered when form is submitted
-    // You might not directly want to bind it to the submit event on the form though...
+    setUserInput(userInput);
+  };
 
-    const yearlyData = []; // per-year results
+  // App içerisinde hesaplama kodu eklenirse kodu her zaman yeniden çalıştırıyor olacağız.
+  // her kullanıcı girdisi alındığında bileşen işlevi tekrar yürütecek ve böylece giriş durumuna bağlı olarak türetilmiş yol olacak.
 
-    let currentSavings = +userInput["current-savings"]; // feel free to change the shape of this input object!
-    const yearlyContribution = +userInput["yearly-contribution"]; // as mentioned: feel free to change the shape...
+  const yearlyData = []; // yıllık sonuçlar
+
+  // kullanıcı girişi boş değilse bu hesaplamaları yapmak için if bloğu kullanıldı.
+  if (userInput) {
+    let currentSavings = +userInput["current-savings"];
+    const yearlyContribution = +userInput["yearly-contribution"];
     const expectedReturn = +userInput["expected-return"] / 100;
     const duration = +userInput["duration"];
 
-    // The below code calculates yearly results (total savings, interest etc)
+    // Aşağıdaki kod yıllık sonuçları (toplam tasarruf, faiz vb.) hesaplar.
     for (let i = 0; i < duration; i++) {
       const yearlyInterest = currentSavings * expectedReturn;
       currentSavings += yearlyInterest + yearlyContribution;
       yearlyData.push({
-        // feel free to change the shape of the data pushed to the array!
         year: i + 1,
         yearlyInterest: yearlyInterest,
         savingsEndOfYear: currentSavings,
         yearlyContribution: yearlyContribution,
       });
     }
+  }
 
-    // do something with yearlyData ...
-  };
-
+  // setResults(yearlyData); // sonuçları state olarak saklamak
   return (
     <div>
       <Header></Header>
 
-      <UserInput></UserInput>
+      <UserInput onCalculate={calculateHandler}></UserInput>
 
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
