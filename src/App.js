@@ -44,7 +44,9 @@ function App() {
 
       {/* giriş varsa veya yoksa ekranda gösterilecek durumlardır.
       hesaplanacak olan değerler yearlydata results table componentine gönderilir.*/}
-      {!userInput && <p> No investment calculated yet.</p>}
+      {!userInput && (
+        <p style={{ textAlign: "center" }}> No investment calculated yet.</p>
+      )}
       {userInput && (
         <ResulsTable
           data={yearlyData}
