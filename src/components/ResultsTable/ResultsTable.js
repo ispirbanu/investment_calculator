@@ -1,4 +1,11 @@
-const ResulsTable = () => {
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+
+const ResulsTable = (props) => {
   return (
     <table className="result">
       <thead>
@@ -11,13 +18,31 @@ const ResulsTable = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>YEAR NUMBER</td>
-          <td>TOTAL SAVINGS END OF YEAR</td>
-          <td>INTEREST GAINED IN YEAR</td>
-          <td>TOTAL INTEREST GAINED</td>
-          <td>TOTAL INVESTED CAPITAL</td>
-        </tr>
+        {props.data.map((yearData) => (
+          // her veri için benzersiz bir anahtar olmalı balşangıçta geçiçi olarak yearData.year kullanıldı.
+          <tr key={yearData.year}>
+            <td>{yearData.year}</td>
+            <td>{formatter.format(yearData.savingsEndOfYear)}</td>
+            <td>{formatter.format(yearData.yearlyInterest)}</td>
+            {/* aşağıdaki kod bloğu toplam faiz hesabı için çalışır.
+            yıl sonundaki tasarruflar, eski ilk yatırım (props.initialInvetment), yıllık katkı ve yıl verileri kullanılır. 
+            eski ilk yatırım verisi kullanıcıdan gelecek current-savings verisidir. Bu da ayrıca app.js içerisinden alınır.*/}
+            <td>
+              {formatter.format(
+                yearData.savingsEndOfYear -
+                  props.initialInvetment -
+                  yearData.yearlyContribution * yearData.year
+              )}
+            </td>
+            {/* aşağıdaki kod bloğu toplam yatırım yapılan sermayeyi hesaplar. */}
+            <td>
+              {formatter.format(
+                props.initialInvetment +
+                  yearData.yearlyContribution * yearData.year
+              )}
+            </td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

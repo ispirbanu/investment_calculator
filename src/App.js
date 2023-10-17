@@ -42,9 +42,15 @@ function App() {
 
       <UserInput onCalculate={calculateHandler}></UserInput>
 
-      {/* Todo: Show below table conditionally (only once result data is available) */}
-      {/* Show fallback text if no data is available */}
-      <ResulsTable></ResulsTable>
+      {/* giriş varsa veya yoksa ekranda gösterilecek durumlardır.
+      hesaplanacak olan değerler yearlydata results table componentine gönderilir.*/}
+      {!userInput && <p> No investment calculated yet.</p>}
+      {userInput && (
+        <ResulsTable
+          data={yearlyData}
+          initialInvetment={userInput["current-savings"]}
+        ></ResulsTable>
+      )}
     </div>
   );
 }
