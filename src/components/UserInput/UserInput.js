@@ -97,6 +97,7 @@ const UserInput = (props) => {
         >
           Reset
         </button>
+        {/* submit butonu */}
         <button type="submit" className={classes.button}>
           Calculate
         </button>
