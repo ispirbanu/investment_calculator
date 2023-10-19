@@ -9,6 +9,7 @@ const formatter = new Intl.NumberFormat("en-US", {
 
 const ResulsTable = (props) => {
   return (
+    // hesaplancak tablo değerleri
     <table className={classes.result}>
       <thead>
         <tr>
