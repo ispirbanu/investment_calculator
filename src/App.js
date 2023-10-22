@@ -49,6 +49,7 @@ function App() {
       )}
       {userInput && (
         <ResulsTable
+          // ilk yatırım ayrıca gönderilir.
           data={yearlyData}
           initialInvetment={userInput["current-savings"]}
         ></ResulsTable>
