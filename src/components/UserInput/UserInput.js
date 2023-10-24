@@ -38,7 +38,7 @@ const UserInput = (props) => {
   };
 
   return (
-    //form ekranı
+    //form ekranı..
     <form onSubmit={submitHandler} className={classes.form}>
       <div className={classes["input-group"]}>
         <p>
