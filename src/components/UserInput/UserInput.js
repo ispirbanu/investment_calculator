@@ -38,7 +38,7 @@ const UserInput = (props) => {
   };
 
   return (
-    //form ekranı..
+    //form da onaylama durumunda çalısacak fonk sumbithandler
     <form onSubmit={submitHandler} className={classes.form}>
       <div className={classes["input-group"]}>
         <p>
