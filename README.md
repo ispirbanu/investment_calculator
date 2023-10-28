@@ -6,7 +6,8 @@ Varsayılan bazı değerler ayarlanıyor ve bunu sıfırlama ve hesaplama seçen
 
 Uygulamanın arayüzü; 
 
-![Untitled](Investment-Calculator%2078c1dfe2457a4813b80645e13cfdac3e/Untitled.png)
+![image](https://github.com/ispirbanu/investment_calculator/assets/45195137/3f675417-feb6-423d-9136-016163bc2053)
+
 
 Mavcut tasarruflar, her yıl eklenen miktar, beklenen yıllık faiz, yatırım süresi gibi değerler girildikten sonra bize tablo olarak hesaplama sonuçlarını yıldan yıla gösterecek bir uygulamadır.
 
