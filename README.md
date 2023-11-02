@@ -6,11 +6,13 @@ Varsayılan bazı değerler ayarlanıyor ve bunu sıfırlama ve hesaplama seçen
 
 Uygulamanın arayüzü; 
 
-![Untitled](Investment-Calculator%2078c1dfe2457a4813b80645e13cfdac3e/Untitled.png)
+![image](https://github.com/ispirbanu/investment_calculator/assets/45195137/3f675417-feb6-423d-9136-016163bc2053)
+
 
 Mavcut tasarruflar, her yıl eklenen miktar, beklenen yıllık faiz, yatırım süresi gibi değerler girildikten sonra bize tablo olarak hesaplama sonuçlarını yıldan yıla gösterecek bir uygulamadır.
 
-![Untitled](Investment-Calculator%2078c1dfe2457a4813b80645e13cfdac3e/Untitled%201.png)
+![image](https://github.com/ispirbanu/investment_calculator/assets/45195137/1dfa14ed-bf6c-4df5-a74d-e5eade4c162b)
+
 
 Uygulama boyunca yapılan bazı olaylar ve notlar aşağıdadır. Bu uygulama udemy üzerinde **[Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)** oluşturduğu bir eğitim üzerindendir. 
 
@@ -150,7 +152,8 @@ export default ResulsTable;
 
 Varsayılan verileri ile hesaplama sonucu tablo;
 
-![Untitled](Investment-Calculator%2078c1dfe2457a4813b80645e13cfdac3e/Untitled%202.png)
+![image](https://github.com/ispirbanu/investment_calculator/assets/45195137/1c80d29d-e807-4d88-b3af-2bf6aef143d4)
+
 
 ### Verileri biçimlendirmek
 
@@ -186,7 +189,8 @@ yearData.yearlyContribution * yearData.year)}
 
 Bu düzenleme sonrasında veriler daha güzel bir düzene sahip olur.
 
-![Untitled](Investment-Calculator%2078c1dfe2457a4813b80645e13cfdac3e/Untitled%203.png)
+![image](https://github.com/ispirbanu/investment_calculator/assets/45195137/d17be9e4-4962-49de-acb8-ddabb539878c)
+
 
 ### Styling modules
 
