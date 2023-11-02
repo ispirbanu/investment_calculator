@@ -39,7 +39,7 @@ function App() {
   return (
     <div>
       <Header></Header>
-
+      {/* kullanıcı girişi */}
       <UserInput onCalculate={calculateHandler}></UserInput>
 
       {/* giriş varsa veya yoksa ekranda gösterilecek durumlardır.
