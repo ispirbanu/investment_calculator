@@ -35,7 +35,7 @@ function App() {
     }
   }
 
-  // setResults(yearlyData); // sonuçları state olarak saklamak
+  // setResults(yearlyData); // sonuçları state olarak saklamak..
   return (
     <div>
       <Header></Header>
